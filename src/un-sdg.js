@@ -2,7 +2,6 @@ import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
 export class unSdg extends DDDSuper(LitElement) {
-
   static get tag() {
     return "un-sdg";
   }
@@ -19,32 +18,30 @@ export class unSdg extends DDDSuper(LitElement) {
   }
 
   static get styles() {
-    return [super.styles,
-    css`
-      :host {
-        display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
-        font-family: var(--ddd-font-navigation);
-        font-size: var(--un-sdg-font-size, var(--ddd-font-size-s));
-      }
-      .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
-      }
-      div {
-        padding: 0;
-        margin: 0;
-      }
-    `];
+    return [
+      super.styles,
+      css`
+        :host {
+          display: block;
+          color: var(--ddd-theme-primary);
+          background-color: var(--ddd-theme-accent);
+          font-family: var(--ddd-font-navigation);
+          font-size: var(--un-sdg-font-size, var(--ddd-font-size-s));
+        }
+        .wrapper {
+          margin: var(--ddd-spacing-2);
+          padding: var(--ddd-spacing-4);
+        }
+        div {
+          padding: 0;
+          margin: 0;
+        }
+      `,
+    ];
   }
 
   render() {
-    return html`
-<div class="wrapper">
-  <div>${this.title}</div>
-  <slot></slot>
-</div>`;
+    return html` <div class="wrapper"></div>`;
   }
 
   /**
