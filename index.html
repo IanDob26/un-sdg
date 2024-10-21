@@ -19,42 +19,34 @@
       un-sdg {
         margin: var(--ddd-spacing-2);
       }
-      #change-button {
-        margin: var(--ddd-spacing-4);
-        text-align: center;
-      }
     </style>
     <title>un-sdg</title>
   </head>
 
-  <body>
-    <div id="demo">
+  <body> 
+     <!-- default element that can be changed with the button -->
+    <div id="id">
       <div id="change-button">
         <button>Change Goal</button>
       </div>
-      <!-- default un-sdg element that can be changed randomly with the button -->
       <un-sdg></un-sdg>
       <script>
-        // variable to hold the app element
-        const app = document.querySelector("#demo");
+        // variable that holds the app element
+        const app = document.querySelector("#id");
 
-        // Create 17 numbered goals with a for loop
+        // creates the seventeen goals that are used
         for (let i = 1; i <= 17; i++) {
           const sdg = document.createElement("un-sdg");
           sdg.goal = i.toString();
           app.appendChild(sdg);
         }
 
-        // Demonstrate circle and "all" goals
-        const circleSDG = document.createElement("un-sdg");
-        circleSDG.goal = "circle";
-        app.appendChild(circleSDG);
-
+        // shows the circle and all 
         const allSDG = document.createElement("un-sdg");
         allSDG.goal = "all";
         app.appendChild(allSDG);
 
-        // Demonstrate color-only option for all goals
+        // shows all of the color only options that can be used
         for (let i = 1; i <= 17; i++) {
           const colorOnlySDG = document.createElement("un-sdg");
           colorOnlySDG.goal = i;
@@ -62,12 +54,12 @@
           app.appendChild(colorOnlySDG);
         }
         
-       //shows a color only for only the first goal
+       //shows the color only option for a default element 
         const colorOnlySDG = document.createElement("un-sdg");
         colorOnlySDG.colorOnly = true;
         app.appendChild(colorOnlySDG);
 
-        // Button changes the first un-sdg element to a random one between 1 and 17
+        // Button changes the default un-sdg goal to a random goal. It is limited to 17 because there are only 17 goals. 
         const changeGoalButton = document.querySelector("button");
         changeGoalButton.addEventListener("click", () => {
           const first = app.querySelector("un-sdg");
@@ -75,7 +67,6 @@
           first.goal = randomGoal.toString();
         });
       </script>
-      
     </div>
     <script type="module" src="./src/un-sdg.js"></script>
 
